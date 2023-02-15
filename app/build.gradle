@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.dtse.map.bancolombiamap'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.dtse.map.bancolombiamap"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation files('libs/maps-6.9.0.300.aar')
+    implementation files('libs/agconnect-core-1.6.0.300.aar')
+    implementation files('libs/ui-6.4.0.302.aar')
+    implementation files('libs/base-6.4.0.302.aar')
+    implementation files('libs/tasks-1.4.1.300.aar')
+    implementation files('libs/device-6.4.0.302.aar')
+    implementation files('libs/availableupdate-6.4.0.302.aar')
+    implementation files('libs/stats-6.4.0.302.aar')
+    implementation files('libs/network-grs-5.0.10.302.aar')
+    implementation files('libs/network-common-5.0.10.302.aar')
+    implementation files('libs/log-6.4.0.302.aar')
+    implementation files('libs/hatool-6.4.0.302.aar')
+    implementation files('libs/dynamic-api-1.0.20.300.aar')
+    implementation files('libs/network-framework-compat-5.0.10.302.aar')
+}
