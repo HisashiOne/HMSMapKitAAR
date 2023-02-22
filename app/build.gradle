@@ -15,11 +15,23 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        dummySigning {
+            keyAlias 'key0'
+            keyPassword 'key123'
+            storeFile file('../keystore.jks')
+            storePassword 'key123'
+        }
+    }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.dummySigning
+        }
+        debug {
+            signingConfig signingConfigs.dummySigning
         }
     }
     compileOptions {
